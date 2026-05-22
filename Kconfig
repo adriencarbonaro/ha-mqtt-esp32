@@ -1,0 +1,24 @@
+menu "MQTT"
+    config MQTT_BROKER_URI
+        string "MQTT broker URI"
+endmenu
+
+menu "Home Assistant"
+    config HA_MAX_ENTITIES
+        int "Max discovery entities"
+        default 32
+        help
+            Upper bound on the number of entities registered through
+            ha_register_entity(). Sized once at compile time; raise it if
+            registration starts returning -1. Excludes the firmware version
+            sensor, which the lib adds for free.
+
+    config HA_MAX_COMMANDS
+        int "Max command (HA -> device) subscriptions"
+        default 8
+        help
+            Upper bound on the number of entities with a command_topic +
+            on_command handler that ha_subscribe_commands() subscribes to
+            (switches, buttons). Sized once at compile time; raise it if
+            ha_subscribe_commands() starts returning -1.
+endmenu
