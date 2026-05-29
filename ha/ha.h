@@ -19,6 +19,8 @@ typedef enum
     HA_BINARY_SENSOR,
     HA_SWITCH,
     HA_BUTTON,
+    HA_NUMBER,
+    HA_SELECT,
 } ha_platform_t;
 
 typedef void (*command_callback_t)(const char* id, const char* payload);

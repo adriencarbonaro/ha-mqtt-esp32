@@ -143,6 +143,10 @@ static const char* platform_str(ha_platform_t platform)
             return "switch";
         case HA_BUTTON:
             return "button";
+        case HA_NUMBER:
+            return "number";
+        case HA_SELECT:
+            return "select";
         case HA_SENSOR:
         default:
             return "sensor";

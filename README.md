@@ -10,7 +10,8 @@ Two layers:
   topic, and exposes `mqtt_publish()` / `mqtt_publish_retained()`.
 - **`ha/`** — Home Assistant integration on top of `mqtt/`. Caller registers an
   `ha_identity_t` (device id, name, manufacturer, model, version) and a table
-  of `ha_entity_t` (sensors, binary sensors, switches, buttons). `ha_init()`
+  of `ha_entity_t` (sensors, binary sensors, switches, buttons, numbers,
+  selects). `ha_init()`
   publishes the MQTT discovery configs, subscribes to command topics for
   entities with an `on_command` handler, and `ha_publish()` pushes state
   updates by entity id.
