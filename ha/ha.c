@@ -364,7 +364,7 @@ void ha_publish(const char* entity_id, const char* value)
                  "%s/%s",
                  s_identity->device_id,
                  entity_state_topic(e));
-        mqtt_publish(topic, value);
+        mqtt_publish_retained(topic, value);
         return;
     }
 
